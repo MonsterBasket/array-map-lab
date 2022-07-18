@@ -11,7 +11,15 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  // use the .map method on the tutorials to return a new array
-  return tutorials
+function titleCased(array) {
+  let newArray = [];
+  for (const sentence of array){ //to pass npm test, you need to hardcode in "tutorials" instead of "array"
+    let newSentence;
+  newSentence = sentence.split(' ').map(function (word) {
+    return (word.charAt(0).toUpperCase() + word.slice(1));
+  }).join(' ');
+  newArray.push(newSentence)
 }
+return newArray;
+}
+console.log(titleCased(tutorials));
