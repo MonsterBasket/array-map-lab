@@ -12,7 +12,7 @@ const tutorials = [
 ];
 
 function titleCased(array) {
-  let newArray = [];
+ /* let newArray = [];
   for (const sentence of array){ //to pass npm test, you need to hardcode in "tutorials" instead of "array"
     let newSentence;
   newSentence = sentence.split(' ').map(function (word) {
@@ -21,5 +21,8 @@ function titleCased(array) {
   newArray.push(newSentence)
 }
 return newArray;
+*/
+let newArray = array.map(tutorial => tutorial.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '));
+return newArray; //so I managed to use map twice instead of a for/of and map, but I'm not sure it's any more readable.
 }
 console.log(titleCased(tutorials));
